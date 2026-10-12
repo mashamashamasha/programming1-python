@@ -6,4 +6,3 @@ author = 'thomas a. EDISON'
 
 transcript = "  Transcript: In normal life we hardly realize how much more we receive than we give, and life cannot be rich without such gratitude.   "
 author = 'dietrich BONHoeFFEr'
-
