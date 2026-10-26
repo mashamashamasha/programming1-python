@@ -1,0 +1,27 @@
+patients = [
+    [39.2, True],   # High fever + coughing
+    [38.5, False],  # Moderate fever only
+    [37.8, True],   # Coughing only
+    [36.5, False]   # Healthy
+]
+for patient in patients:
+    patient_temp, is_coughing = patient  #multiple variables from the list
+    if patient_temp < 38 and is_coughing == False:
+        message = "🟢 HOME - low fever"
+        recommendation = "Rest and hydrate."
+    elif patient_temp < 38 and is_coughing == True:
+        message = "🟡 STANDARD - cough"
+        recommendation = "Hand-over dragees."
+    elif 38 <= patient_temp < 39 and is_coughing == False:
+        message = "🟡 STANDARD - moderate fever"
+        recommendation = "Book appointment."
+    elif 38 <= patient_temp < 39 and is_coughing == True:
+        message = "🔴 URGENT - possible pneumonia"
+        recommendation = "See doctor immediately for respiratory check."
+    else:
+        message = "🔴 URGENT - high fever"
+        recommendation = "See doctor immediately."
+    #print must also be in loop to show the final result for each case    
+    print(f"Temperature: {patient_temp}°C, Coughing: {is_coughing}")
+    print(f"{message}")
+    print(f"Recommendation: {recommendation}")
