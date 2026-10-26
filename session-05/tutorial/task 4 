@@ -1,0 +1,56 @@
+names = ["Maria", "João", "Ana", "Carlos", "Fatima", "Pedro"]
+ages = [24, 16, 17, 17, 31, 15]
+positions = ["front", "back", "front", "back", "front", "back"]
+has_costume = [True, True, False, True, True, True]
+
+# Task 1 
+front_dancers = 0 
+for i in range(len(ages)):
+    if positions[i] == "front":
+        if ages[i] >= 18:
+            front_dancers = front_dancers + 1
+            print(f"{names[i]} is approved") 
+        else: 
+            print(f"{names[i]} is disapproved")
+
+# Task 2 
+missing_costumes = 0
+for i in range(len(has_costume)):
+    if has_costume[i] == False:
+        missing_costumes = missing_costumes + 1
+        missing_costume_names = names[i]
+print(f"The number of dancers who miss their costumes: {missing_costumes}" 
+       f"\nThe names of dancers who miss their costumes: {missing_costume_names}")
+
+# Task 3
+front_dancers = 0
+back_dancers = 0
+for position in positions:
+    if position == "front":
+        front_dancers = front_dancers + 1
+    else: 
+        back_dancers = back_dancers + 1
+print(f"Amount of total dancers in front: {front_dancers} \nAmount of total dancers in back: {back_dancers}")
+
+#Task 4
+front_dancers = 0 
+for age in ages:
+    if age >= 18:
+        front_dancers = front_dancers + 1
+print(f"Total approved dancers:{front_dancers}" )
+
+complete_costumes = 0 
+for costume in has_costume:
+    if costume == True:
+        complete_costumes = complete_costumes + 1
+print(f"Total dancers with complete costumes: {complete_costumes}")
+
+front_dancers = 0
+back_dancers = 0
+for position in positions:
+    if position == "front":
+        front_dancers +=1
+    else: 
+        back_dancers +=1
+print(f"Back: {back_dancers}")
+print(f"Front: {front_dancers}")
