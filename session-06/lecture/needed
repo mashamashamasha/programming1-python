@@ -1,0 +1,26 @@
+
+donations = {
+    'American Red Cross': 'Medical supplies for the clinic',
+    'UNICEF': 'Food for children',
+    'World Health Org': 'Medical supplies for the clinic',
+    'Catholic Charities': 'Food for children',
+    'Oxfam': 'Educational programs',
+    'Save the Children': 'Educational programs',
+    'Global Fund': 'Medical supplies for the clinic',
+}
+
+# Actual use - where the money really went
+actual_use = {
+    'American Red Cross': 'Medical supplies for the clinic',
+    'UNICEF': 'Administrative overhead',
+    'World Health Org': 'Medical supplies for the clinic',
+    'Catholic Charities': 'Food for children',
+    'Oxfam': 'Administrative overhead',
+    'Save the Children': 'Educational programs',
+    'Global Fund': 'Building renovation project',
+}
+for donor, intention in donations.items():
+    actual = actual_use[donor]
+    print({actual})
+    disactial = actual_use[intention]
+    print({disactial})

@@ -1,3 +1,2 @@
 help(list.remove)
 
-# Or try it in interactive mode...

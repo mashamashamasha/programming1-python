@@ -1,0 +1,20 @@
+# Or try it in interactive mode...# Information about each mission center
+centers = {
+    'center_1': {
+        'name': 'Home for the Dying Destitute',
+        'city': 'Kolkata',
+        'capacity': 100,
+    },
+    'center_2': {
+        'name': "Children's Home",
+        'city': 'Delhi',
+        'capacity': 150,
+    },
+}
+
+# Loop through centers and display information
+for center_id, center_info in centers.items():
+    print(f"  Center: {center_info['name']}")
+    print(f"  Location: {center_info['city']}")
+    print(f"  Capacity: {center_info['capacity']} people")
+    print(f" {center_id}")
