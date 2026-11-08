@@ -68,22 +68,34 @@ flights = {
     }
 }
 
+import copy
+volunteers_copy = copy.deepcopy(volunteers)
 # Step 1: Calculate dedication score for each volunteer and update their records
 print("=" * 70)
 print("VOLUNTEER EVALUATION FOR MEDAL CEREMONY")
 print("=" * 70)
 
 # TODO: Add your code here
+all_scores = []
+for volunteer in volunteers_copy:
+    score_years = volunteer['years_served']*5 
+    score_spirituality = volunteer['spirituality_score'] * 1.5
+    score = score_years + score_spirituality
+    all_scores.append(score)
+    volunteer['dedication_score'] = score                       #volunteer is our dictionares
+    print(f"{volunteer['name']} \n Score: {score}\n")  
 
+#volunteer['dedication score'] = score                          #to change the original copy
 
 # Step 2: Select the 3 best volunteers
 print("\n" + "=" * 70)
 print("SELECTING TOP 3 VOLUNTEERS")
 print("=" * 70)
 
-top_3_volunteers = []
-
 # TODO: Add your code here
+top_3_volunteers = []
+#key=lambda???
+top_3_volunteers = sorted(volunteers_copy, key=lambda dictionary: dictionary['dedication_score'], reverse=True)[:3]
 
 print("\n✓ TOP 3 SELECTED VOLUNTEERS:")
 for i, volunteer in enumerate(top_3_volunteers, 1):
@@ -116,6 +128,27 @@ travel_roster = {
 # Step 4: Add passengers to outbound and return fligt passenger lists
 # - Assign each one of the available seats
 # - Add them as dicts with the keys 'name', 'passport', 'seat'
+
+for volunteer in top_3_volunteers:
+    travel_roster['travelers'].append({
+        'name': volunteer['name'], 
+        'position': f"Volunteer - {volunteer['center']}",
+        'passport': volunteer['passport']})
+
+for traveler in travel_roster['travelers']:
+    traveler['seats'] = flights['outbound']['available_seats'].pop(0)
+    flights['outbound']['passengers'].append({'name': traveler['name'],  
+                                              'passport': traveler['passport'],
+                                              'seat': traveler['seats']})
+
+for traveler in travel_roster['travelers']:
+        traveler['seats'] = flights['return']['available_seats'].pop(0)
+        flights['return']['passengers'].append({'name': traveler['name'],  
+                                                      'passport': traveler['passport'],
+                                                      'seat': traveler['seats']})
+
+
+      
 
 # TODO: Add your code here
 
