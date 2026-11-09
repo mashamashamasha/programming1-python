@@ -13,7 +13,7 @@ max_mosquitoes = number_of_mosquitoes
 max_waterholes = number_of_waterholes
 
 for day in range (1, 357):
-    #random() for random number from import random (library) => from 0 to 1
+    #random.random number from import random (library) => from 0 to 1
     if random.random() < rain_event_probability:   
         number_of_waterholes = int(number_of_waterholes + new_waterholes_per_rain_event)
 
