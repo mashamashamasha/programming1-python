@@ -15,6 +15,10 @@ while campaign_active:
     # war in France distracts Parliament
     pass
     if 1793<=year<=1802:
+        #would be better to put it here
+        #if year == 1801:
+                #mps_present += 100
+                #supporters +=90
         continue
         
     # Randomly simulate how many MPs actually showed up to work that day

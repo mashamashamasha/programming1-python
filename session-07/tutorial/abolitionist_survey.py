@@ -8,3 +8,27 @@ questions = [
     ("Do you believe the middle passage is unnecessarily cruel?", "cruelty"),
     ("Will you sign the petition for the 1792 session?", "petition")
 ]
+
+for_answers = 0
+against_answers = {'topics to discuss' : []}
+name = input("Please enter your name: ")
+for question, theme in questions:
+    answer = input(f"{question} \nPlease answer with yes or no: ")
+    if answer == "yes":
+        for_answers += 1
+    else:
+        against_answers['topics to discuss'].append(question)
+
+print(f"{name} is")
+if for_answers <= 3:
+    print("...the opponent")
+if  3 < for_answers <= 5:
+    print("...the persuadable one")
+    print(f"We need to talk about following topics: \n{'\n'.join(against_answers['topics to discuss'])}")
+if 5 < for_answers <= 7:
+    print("...the supporter")
+
+
+
+
+ 
