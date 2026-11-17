@@ -1,4 +1,4 @@
-def schedule_bus():
+def schedule_bus(destination, bus_seats=20, training_focus="Non-violent Resistance"):
     """Schedule a bus trip for the Freedom Riders."""
     print(f"Busing to: {destination}")
     print(f"Capacity: {bus_seats} seats")
