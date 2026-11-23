@@ -15,3 +15,5 @@ class Citizen:
     def pay_taxes(self):
         """Pay taxes to the kingdom."""
         print(f"{self.name} pays taxes to the kingdom.")
+
+    new_citizen = Citizen("mm", 30)

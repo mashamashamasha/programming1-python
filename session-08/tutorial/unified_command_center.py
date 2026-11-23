@@ -3,9 +3,12 @@ speakers = []
 
 # --- Add function definition for add_to_march_plan ---
 def add_to_march_plan(*name, **logistics):
-    resources.update(logistics)
+    for key, value in logistics.items():
+        if key in resources.keys():
+            resources[key] += value
+        else: 
+            resources[key] = value
     speakers.extend(name)
-    return(speakers, resources.items())
 
 # --- function definition for the output ---
 def build_march_plan(speakers, resources):
