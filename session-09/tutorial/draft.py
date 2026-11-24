@@ -7,7 +7,7 @@ class Lion:
         self.strength = strength
         self.hunger_level = hunger_level# Default value if not provided
     def __str__(self):
-        bla = f"{hunger_level} - {self.name}"
+        bla = f"{self.hunger_level} - {self.name}"
         return bla
     
 fff = Lion('f', 89 , 'op')
